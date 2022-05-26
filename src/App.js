@@ -5,10 +5,13 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import { Navbar, Footer, Sidebar, ThemeSetting } from './components'
 import { ECommerce, Orders, Calender, Employees, Stacked, Pyramid, Customers, Kanban, Area, Bar, Pie, Financial, ColorMapping, ColorPicker, Editor, Line } from './pages'
 import './App.css'
+import { useStateContext } from './context/ContextProvider'
 
 const App = () => {
 
-    const activeMenu = true
+    const { activeMenu } = useStateContext()
+
+    // const activeMenu = true
 
     return (
         <div>
@@ -43,36 +46,37 @@ const App = () => {
                         <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
                             <Navbar />
                         </div>
-                    </div>
 
-                    <div>
-                        <Routes>
-                            {/* Dashboard route */}
-                            <Route path='/' element={<ECommerce />} />
-                            <Route path='/eCommerce' element={<ECommerce />} />
 
-                            {/* Pages */}
-                            <Route path='/orders' element={<Orders />} />
-                            <Route path='/employees' element={<Employees />} />
-                            <Route path='/customers' element={<Customers />} />
+                        <div>
+                            <Routes>
+                                {/* Dashboard route */}
+                                <Route path='/' element={<ECommerce />} />
+                                <Route path='/eCommerce' element={<ECommerce />} />
 
-                            {/* Apps */}
-                            <Route path='/kanban' element={<Kanban />} />
-                            <Route path='/editor' element={<Editor />} />
-                            <Route path='/calender' element={<Calender />} />
-                            <Route path='/color-picker' element={<ColorPicker />} />
+                                {/* Pages */}
+                                <Route path='/orders' element={<Orders />} />
+                                <Route path='/employees' element={<Employees />} />
+                                <Route path='/customers' element={<Customers />} />
 
-                            {/* Charts */}
-                            <Route path='/line' element={<Line />} />
-                            <Route path='/area' element={<Area />} />
-                            <Route path='/bar' element={<Bar />} />
-                            <Route path='/pie' element={<Pie />} />
-                            <Route path='/financial' element={<Financial />} />
-                            <Route path='/color-mapping' element={<ColorMapping />} />
-                            <Route path='/pyramid' element={<Pyramid />} />
-                            <Route path='/stacked' element={<Stacked />} />
+                                {/* Apps */}
+                                <Route path='/kanban' element={<Kanban />} />
+                                <Route path='/editor' element={<Editor />} />
+                                <Route path='/calender' element={<Calender />} />
+                                <Route path='/color-picker' element={<ColorPicker />} />
 
-                        </Routes>
+                                {/* Charts */}
+                                <Route path='/line' element={<Line />} />
+                                <Route path='/area' element={<Area />} />
+                                <Route path='/bar' element={<Bar />} />
+                                <Route path='/pie' element={<Pie />} />
+                                <Route path='/financial' element={<Financial />} />
+                                <Route path='/color-mapping' element={<ColorMapping />} />
+                                <Route path='/pyramid' element={<Pyramid />} />
+                                <Route path='/stacked' element={<Stacked />} />
+
+                            </Routes>
+                        </div>
                     </div>
 
                 </div>
